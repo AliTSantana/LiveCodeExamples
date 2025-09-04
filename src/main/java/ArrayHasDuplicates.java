@@ -26,12 +26,10 @@ public class ArrayHasDuplicates {
         HashSet<Integer> withoutDuplicates = new HashSet<>();
 
         for(int num : numbers){
-            if(withoutDuplicates.contains(num)){
+            if(!withoutDuplicates.add(num)){
                 return true;
             }
-            withoutDuplicates.add(num);
         }
-
         return false;
     }
 }

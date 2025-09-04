@@ -9,6 +9,10 @@ public class Anagram {
 
     private static boolean isAnagram(String word1, String word2) {
         if (word1 == null || word2 == null) return false;
+
+        word1 = word1.replaceAll("[^a-zA-Z]", "").toLowerCase();
+        word2 = word2.replaceAll("[^a-zA-Z]", "").toLowerCase();
+
         if (word1.length() != word2.length()) return false;
 
         Map<Character, Integer> count = new HashMap<>();
